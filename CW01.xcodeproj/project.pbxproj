@@ -16,6 +16,14 @@
 		2B01C46925F60866002C4783 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01C46725F60866002C4783 /* CustomKeyboard.swift */; };
 		2B01C46A25F60866002C4783 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B01C46825F60866002C4783 /* CustomKeyboard.xib */; };
 		2B01C46E25F6224B002C4783 /* ConvertionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */; };
+		2B804591260101AD006D2B19 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B804590260101AD006D2B19 /* SpeedViewController.swift */; };
+		2BD5E57625FFD870001C934C /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57525FFD870001C934C /* TemperatureViewController.swift */; };
+		2BD5E57925FFF01C001C934C /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57825FFF01C001C934C /* Temperature.swift */; };
+		2BD5E57C2600052D001C934C /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57B2600052D001C934C /* Weight.swift */; };
+		2BD5E57F26000544001C934C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57E26000544001C934C /* Volume.swift */; };
+		2BD5E5822600055A001C934C /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5812600055A001C934C /* Distance.swift */; };
+		2BD5E5852600056D001C934C /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5842600056D001C934C /* Speed.swift */; };
+		2BD5E5882600057E001C934C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5872600057E001C934C /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		2B01C46725F60866002C4783 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		2B01C46825F60866002C4783 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 		2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertionViewController.swift; sourceTree = "<group>"; };
+		2B804590260101AD006D2B19 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
+		2BD5E57525FFD870001C934C /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		2BD5E57825FFF01C001C934C /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		2BD5E57B2600052D001C934C /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		2BD5E57E26000544001C934C /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		2BD5E5812600055A001C934C /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		2BD5E5842600056D001C934C /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		2BD5E5872600057E001C934C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,16 +78,12 @@
 		2B01C44B25F606D3002C4783 /* CW01 */ = {
 			isa = PBXGroup;
 			children = (
-				2B01C46625F607E3002C4783 /* CustomKeyboard */,
 				2B01C46425F60730002C4783 /* Views */,
 				2B01C46325F60711002C4783 /* Controllers */,
 				2B01C46225F60705002C4783 /* Model */,
 				2B01C44C25F606D3002C4783 /* AppDelegate.swift */,
 				2B01C44E25F606D3002C4783 /* SceneDelegate.swift */,
-				2B01C45025F606D3002C4783 /* ViewController.swift */,
-				2B01C45225F606D3002C4783 /* Main.storyboard */,
 				2B01C45525F606D4002C4783 /* Assets.xcassets */,
-				2B01C45725F606D4002C4783 /* LaunchScreen.storyboard */,
 				2B01C45A25F606D4002C4783 /* Info.plist */,
 			);
 			path = CW01;
@@ -80,6 +92,12 @@
 		2B01C46225F60705002C4783 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BD5E57825FFF01C001C934C /* Temperature.swift */,
+				2BD5E57B2600052D001C934C /* Weight.swift */,
+				2BD5E57E26000544001C934C /* Volume.swift */,
+				2BD5E5812600055A001C934C /* Distance.swift */,
+				2BD5E5842600056D001C934C /* Speed.swift */,
+				2BD5E5872600057E001C934C /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,7 +105,11 @@
 		2B01C46325F60711002C4783 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B01C46725F60866002C4783 /* CustomKeyboard.swift */,
+				2B01C45025F606D3002C4783 /* ViewController.swift */,
 				2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */,
+				2BD5E57525FFD870001C934C /* TemperatureViewController.swift */,
+				2B804590260101AD006D2B19 /* SpeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -95,17 +117,11 @@
 		2B01C46425F60730002C4783 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B01C45725F606D4002C4783 /* LaunchScreen.storyboard */,
+				2B01C46825F60866002C4783 /* CustomKeyboard.xib */,
+				2B01C45225F606D3002C4783 /* Main.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2B01C46625F607E3002C4783 /* CustomKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				2B01C46725F60866002C4783 /* CustomKeyboard.swift */,
-				2B01C46825F60866002C4783 /* CustomKeyboard.xib */,
-			);
-			path = CustomKeyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +198,16 @@
 				2B01C45125F606D3002C4783 /* ViewController.swift in Sources */,
 				2B01C44D25F606D3002C4783 /* AppDelegate.swift in Sources */,
 				2B01C44F25F606D3002C4783 /* SceneDelegate.swift in Sources */,
+				2BD5E5852600056D001C934C /* Speed.swift in Sources */,
+				2BD5E57F26000544001C934C /* Volume.swift in Sources */,
+				2B804591260101AD006D2B19 /* SpeedViewController.swift in Sources */,
+				2BD5E5822600055A001C934C /* Distance.swift in Sources */,
 				2B01C46925F60866002C4783 /* CustomKeyboard.swift in Sources */,
+				2BD5E5882600057E001C934C /* Data.swift in Sources */,
 				2B01C46E25F6224B002C4783 /* ConvertionViewController.swift in Sources */,
+				2BD5E57925FFF01C001C934C /* Temperature.swift in Sources */,
+				2BD5E57625FFD870001C934C /* TemperatureViewController.swift in Sources */,
+				2BD5E57C2600052D001C934C /* Weight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

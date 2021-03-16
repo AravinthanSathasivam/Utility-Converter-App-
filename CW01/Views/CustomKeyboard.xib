@@ -30,7 +30,7 @@
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="HandleButtonPress:" destination="-1" eventType="touchUpInside" id="MbD-Z2-MgS"/>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="Lvd-ms-e5m"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLl-kG-VYe">
@@ -39,6 +39,9 @@
                                             <state key="normal" title="2">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="PeF-NM-nSC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuX-rZ-8B9">
                                             <rect key="frame" x="273.33333333333331" y="0.0" width="126.66666666666669" height="92.666666666666671"/>
@@ -46,6 +49,9 @@
                                             <state key="normal" title="3">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="lVU-MG-H7e"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -58,6 +64,9 @@
                                             <state key="normal" title="4">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="2By-DC-3dO"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-6v-XCE">
                                             <rect key="frame" x="136.66666666666666" y="0.0" width="126.66666666666666" height="92.333333333333329"/>
@@ -65,6 +74,9 @@
                                             <state key="normal" title="5">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="3yk-cF-BC5"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTN-sq-z7i">
                                             <rect key="frame" x="273.33333333333331" y="0.0" width="126.66666666666669" height="92.333333333333329"/>
@@ -72,6 +84,9 @@
                                             <state key="normal" title="6">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="Z3U-67-6Uq"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -84,6 +99,9 @@
                                             <state key="normal" title="7">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="260-X0-AAj"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9s-O4-GEk">
                                             <rect key="frame" x="136.66666666666666" y="0.0" width="126.66666666666666" height="92.666666666666671"/>
@@ -91,6 +109,9 @@
                                             <state key="normal" title="8">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="PX3-18-M8e"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThR-im-W70">
                                             <rect key="frame" x="273.33333333333331" y="0.0" width="126.66666666666669" height="92.666666666666671"/>
@@ -98,18 +119,24 @@
                                             <state key="normal" title="9">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="qpg-Q5-VLi"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oXv-On-gwT">
                                     <rect key="frame" x="0.0" y="307.66666666666669" width="400" height="92.333333333333314"/>
                                     <subviews>
-                                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE4-Ff-TlV">
+                                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE4-Ff-TlV" userLabel="Decimal">
                                             <rect key="frame" x="0.0" y="0.0" width="126.66666666666667" height="92.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title=".">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="weO-Xc-UKC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faS-gh-Fn3">
                                             <rect key="frame" x="136.66666666666666" y="0.0" width="126.66666666666666" height="92.333333333333329"/>
@@ -117,17 +144,23 @@
                                             <state key="normal" title="0">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="tS5-HZ-ib9"/>
+                                            </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="snv-hW-kmQ">
                                             <rect key="frame" x="273.33333333333331" y="0.0" width="126.66666666666669" height="92.333333333333329"/>
                                             <subviews>
-                                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-3y-dAE">
+                                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-3y-dAE" userLabel="DEL">
                                                     <rect key="frame" x="0.0" y="0.0" width="126.66666666666667" height="43.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" image="delete.left" catalog="system">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="qb6-Fl-OME"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtK-DQ-c30">
                                                     <rect key="frame" x="0.0" y="48.666666666666629" width="126.66666666666667" height="43.666666666666657"/>
@@ -135,6 +168,9 @@
                                                     <state key="normal" title="NEG">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="handleBtnClick:" destination="-1" eventType="touchUpInside" id="yiI-R1-eGW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
