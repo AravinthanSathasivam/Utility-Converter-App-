@@ -51,25 +51,25 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
         switch TemperatureScales(rawValue: sender.tag)! {
         
         case .celsius:
-            temperature.celsius = doubleTextFieldValue
-            temperature.fahrenheit = (doubleTextFieldValue * 9/5 + 32)
-            temperature.kelvin = doubleTextFieldValue + 273.15
+            temperature.celsius = roundDecimal( value: doubleTextFieldValue)
+            temperature.fahrenheit = roundDecimal( value: (doubleTextFieldValue * 9/5 + 32))
+            temperature.kelvin = roundDecimal( value: (doubleTextFieldValue + 273.15))
             
             fahrenheitTextField.text = "\(temperature.fahrenheit)"
             kelvinTextField.text = "\(temperature.kelvin)"
         
         case .fahrenheit:
-            temperature.celsius = (doubleTextFieldValue - 32) * 5/9
-            temperature.fahrenheit = doubleTextFieldValue
-            temperature.kelvin = (doubleTextFieldValue - 32) * 5/9 + 273.15
+            temperature.celsius = roundDecimal( value: ((doubleTextFieldValue - 32) * 5/9))
+            temperature.fahrenheit = roundDecimal( value: (doubleTextFieldValue))
+            temperature.kelvin = roundDecimal( value:((doubleTextFieldValue - 32) * 5/9 + 273.15))
             
             celsiusTextField.text = "\(temperature.celsius)"
             kelvinTextField.text = "\(temperature.kelvin)"
         
         case .kelvin:
-            temperature.celsius = doubleTextFieldValue - 273.15
-            temperature.fahrenheit = (doubleTextFieldValue - 273.15 ) * 9/5 + 32
-            temperature.kelvin = doubleTextFieldValue
+            temperature.celsius = roundDecimal( value:(doubleTextFieldValue - 273.15))
+            temperature.fahrenheit = roundDecimal( value:((doubleTextFieldValue - 273.15 ) * 9/5 + 32))
+            temperature.kelvin = roundDecimal( value:(doubleTextFieldValue))
             
             celsiusTextField.text = "\(temperature.celsius)"
             fahrenheitTextField.text = "\(temperature.fahrenheit)"
@@ -92,7 +92,7 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
         
         return defaults.object(forKey: historyKey) as? [String] ?? [String]()
     }
-    
+    // Storing values in User Defaults
     @IBAction func onPressSave(_ sender: UIButton) {
         
         let defaults = UserDefaults.standard
@@ -102,6 +102,12 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
         defaults.setValue(historyStringArray, forKey: "TemperatureHistory")
     }
     
+    // Rounding Decimal
+    func roundDecimal( value: Double) -> Double{
+        let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
+        return Double(round(deciPower*value)/deciPower)
+        
+    }
 }
 
 

@@ -9,13 +9,20 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
-    var decimalValue = 0 
+    @IBOutlet weak var decimalStepper: UIStepper!
+    @IBOutlet weak var decimalLbl: UILabel!
+    
+    var decimalValue = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.decimalLbl.text = "0"
     }
 
-
+    @IBAction func decimalValueChange(_ sender: UIStepper) {
+        decimalLbl.text = "\(Int(decimalStepper.value))"
+        RoundDecimal.instance.roundDecimal = Int(decimalStepper.value)
+    }
+    
 }
 	

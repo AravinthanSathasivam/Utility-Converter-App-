@@ -248,7 +248,7 @@
         <!--Settings-->
         <scene sceneID="ImM-yh-ssu">
             <objects>
-                <viewController id="mh5-Qp-stF" sceneMemberID="viewController">
+                <viewController id="mh5-Qp-stF" customClass="SettingViewController" customModule="CW01" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8E-9a-5U9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,25 +256,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-kJ-vbF">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decimal Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3b-qB-tw7">
-                                        <rect key="frame" x="14" y="54" width="108" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-GR-OQE">
-                                        <rect key="frame" x="243" y="54" width="143.33333333333334" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="121" translatesAutoresizingMaskIntoConstraints="NO" id="Ypq-8o-PkQ">
+                                        <rect key="frame" x="14" y="54" width="371.66666666666669" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-zh-iXH">
-                                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decimal Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3b-qB-tw7">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mnZ-NK-YkU">
-                                                <rect key="frame" x="49.333333333333343" y="0.0" width="94" height="32"/>
-                                            </stepper>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-GR-OQE">
+                                                <rect key="frame" x="228.33333333333331" y="0.0" width="143.33333333333331" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-zh-iXH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="mnZ-NK-YkU">
+                                                        <rect key="frame" x="49.333333333333343" y="0.0" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="decimalValueChange:" destination="mh5-Qp-stF" eventType="valueChanged" id="ORC-JM-K7R"/>
+                                                        </connections>
+                                                    </stepper>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -292,6 +299,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="eLJ-Kc-yRo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="decimalLbl" destination="Ppn-zh-iXH" id="RYG-Xq-eAT"/>
+                        <outlet property="decimalStepper" destination="mnZ-NK-YkU" id="pyW-no-iDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRL-A1-bfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
