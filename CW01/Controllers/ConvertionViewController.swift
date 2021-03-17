@@ -18,15 +18,26 @@ class ConvertionViewController: UIViewController {
     
     @IBOutlet weak var keyboardView: CustomKeyboard!
     
+    var viewIdentifier : Int = 0
+    
     enum Segues {
         static let  toTemperature = "ToTemperature"
         static let toSpeed = "ToSpeed"
+        static let toDistance = "ToDistance"
+        static let toWeight = "ToWeight"
+        static let toVolume = "ToVolume"
+        static let toData = "ToData"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func saveConversions(_ sender: UIBarButtonItem) {
+        //TemperatureViewController().saveTemperature()
+        print(viewIdentifier)
+        
+        }
     // Passing data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Passing data to temperature View Controller
@@ -39,6 +50,30 @@ class ConvertionViewController: UIViewController {
             let speedVC = segue.destination as! SpeedViewController
             speedVC.keyboardView = keyboardView
         }
+        
+        // Passing data to distance View Controller
+        else if segue.identifier == Segues.toDistance{
+            let distanceVC = segue.destination as! DistanceViewController
+            distanceVC.keyboardView = keyboardView
+        }
+        
+        // Passing data to weight View Controller
+        else if segue.identifier == Segues.toWeight{
+            let weightVC = segue.destination as! WeightViewController
+            weightVC.keyboardView = keyboardView
+        }
+        
+        // Passing data to volume View Controller
+        else if segue.identifier == Segues.toVolume{
+            let volumeVC = segue.destination as! VolumeViewController
+            volumeVC.keyboardView = keyboardView
+        }
+        
+        // Passing data to data View Controller
+        else if segue.identifier == Segues.toData{
+            let dataVC = segue.destination as! DataViewController
+            dataVC.keyboardView = keyboardView
+        }
     }
     
     //Segment Control to switch between Views
@@ -50,6 +85,8 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 0
             speedView.alpha = 0
             dataView.alpha = 0
+            
+            viewIdentifier = 0
         }else if sender.selectedSegmentIndex == 1{
             weightView.alpha = 0
             temperatureView.alpha = 1
@@ -57,6 +94,8 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 0
             speedView.alpha = 0
             dataView.alpha = 0
+            
+            viewIdentifier = 1
         }else if sender.selectedSegmentIndex == 2{
             weightView.alpha = 0
             temperatureView.alpha = 0
@@ -65,6 +104,8 @@ class ConvertionViewController: UIViewController {
             speedView.alpha = 0
             dataView.alpha = 0
             
+            viewIdentifier = 2
+            
         }else if sender.selectedSegmentIndex == 3{
             weightView.alpha = 0
             temperatureView.alpha = 0
@@ -72,6 +113,8 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 1
             speedView.alpha = 0
             dataView.alpha = 0
+            
+            viewIdentifier = 3
             
         }else if sender.selectedSegmentIndex == 4{
             
@@ -82,6 +125,8 @@ class ConvertionViewController: UIViewController {
             speedView.alpha = 1
             dataView.alpha = 0
             
+            viewIdentifier = 4
+            
         }else if sender.selectedSegmentIndex == 5{
             
             weightView.alpha = 0
@@ -90,6 +135,8 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 0
             speedView.alpha = 0
             dataView.alpha = 1
+            
+            viewIdentifier = 5
             
         }
         
