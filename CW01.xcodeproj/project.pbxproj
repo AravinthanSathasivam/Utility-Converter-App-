@@ -29,6 +29,8 @@
 		2BD5E5822600055A001C934C /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5812600055A001C934C /* Distance.swift */; };
 		2BD5E5852600056D001C934C /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5842600056D001C934C /* Speed.swift */; };
 		2BD5E5882600057E001C934C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E5872600057E001C934C /* Data.swift */; };
+		2BFAC5B02602838D008806E3 /* RoundDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFAC5AF2602838D008806E3 /* RoundDecimal.swift */; };
+		2BFAC5B326028560008806E3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFAC5B226028560008806E3 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		2BD5E5812600055A001C934C /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		2BD5E5842600056D001C934C /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		2BD5E5872600057E001C934C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		2BFAC5AF2602838D008806E3 /* RoundDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDecimal.swift; sourceTree = "<group>"; };
+		2BFAC5B226028560008806E3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		2B01C44B25F606D3002C4783 /* CW01 */ = {
 			isa = PBXGroup;
 			children = (
+				2BFAC5AE26028358008806E3 /* Extensions */,
 				2B01C46425F60730002C4783 /* Views */,
 				2B01C46325F60711002C4783 /* Controllers */,
 				2B01C46225F60705002C4783 /* Model */,
@@ -125,6 +130,7 @@
 				2B67708F260207FE00BD433B /* VolumeViewController.swift */,
 				2B6770952602082B00BD433B /* DataViewController.swift */,
 				2B6770922602080F00BD433B /* WeightViewController.swift */,
+				2BFAC5B226028560008806E3 /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -137,6 +143,14 @@
 				2B01C45225F606D3002C4783 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2BFAC5AE26028358008806E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BFAC5AF2602838D008806E3 /* RoundDecimal.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,7 @@
 				2B6770932602080F00BD433B /* WeightViewController.swift in Sources */,
 				2B67708A2601D71900BD433B /* HistoryTableViewController.swift in Sources */,
 				2BD5E57F26000544001C934C /* Volume.swift in Sources */,
+				2BFAC5B02602838D008806E3 /* RoundDecimal.swift in Sources */,
 				2B804591260101AD006D2B19 /* SpeedViewController.swift in Sources */,
 				2BD5E5822600055A001C934C /* Distance.swift in Sources */,
 				2B67708D2601F62A00BD433B /* DistanceViewController.swift in Sources */,
@@ -224,6 +239,7 @@
 				2B01C46925F60866002C4783 /* CustomKeyboard.swift in Sources */,
 				2BD5E5882600057E001C934C /* Data.swift in Sources */,
 				2B01C46E25F6224B002C4783 /* ConvertionViewController.swift in Sources */,
+				2BFAC5B326028560008806E3 /* SettingViewController.swift in Sources */,
 				2B677090260207FE00BD433B /* VolumeViewController.swift in Sources */,
 				2BD5E57925FFF01C001C934C /* Temperature.swift in Sources */,
 				2BD5E57625FFD870001C934C /* TemperatureViewController.swift in Sources */,
