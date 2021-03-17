@@ -8,7 +8,7 @@
 import UIKit
 
 class ConvertionViewController: UIViewController {
-    
+    // variables
     @IBOutlet weak var weightView: UIView!
     @IBOutlet weak var temperatureView: UIView!
     @IBOutlet weak var volumeView: UIView!
@@ -16,10 +16,12 @@ class ConvertionViewController: UIViewController {
     @IBOutlet weak var speedView: UIView!
     @IBOutlet weak var dataView: UIView!
     
+    // Custom-Keyboard
     @IBOutlet weak var keyboardView: CustomKeyboard!
     
     var viewIdentifier : Int = 0
     
+    // Segues- identifiers
     enum Segues {
         static let  toTemperature = "ToTemperature"
         static let toSpeed = "ToSpeed"

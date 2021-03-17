@@ -12,6 +12,7 @@ enum TemperatureScales: Int {
 }
 
 class TemperatureViewController: UIViewController , UITextFieldDelegate{
+    // Variables
     @IBOutlet weak var keyboardView: CustomKeyboard!
     @IBOutlet weak var celsiusTextField: UITextField!
     @IBOutlet weak var fahrenheitTextField: UITextField!
@@ -20,6 +21,7 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
     //creating an object - Temperature
     var temperature : Temperature = Temperature(celsius: 0.0, fahrenheit: 0.0, kelvin: 0.0)
     
+    // Array to store Temperature-conversions
     var historyStringArray: [String] = []
     
     override func viewDidLoad() {

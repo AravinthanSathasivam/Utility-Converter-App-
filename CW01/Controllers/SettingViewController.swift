@@ -2,13 +2,14 @@
 //  SettingViewController.swift
 //  CW01
 //
-//  Created by user188409 on 3/17/21.
+//  Created by Aravinthan Sathasivam on 3/17/21.
 //
 
 import UIKit
 
 class SettingViewController: UIViewController {
     
+    //  Variables
     @IBOutlet weak var decimalStepper: UIStepper!
     @IBOutlet weak var decimalLbl: UILabel!
     
@@ -16,9 +17,10 @@ class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.decimalLbl.text = "0"
+        self.decimalLbl.text = "2"
     }
-
+    
+    // setting stepper value to Round Decimal places
     @IBAction func decimalValueChange(_ sender: UIStepper) {
         decimalLbl.text = "\(Int(decimalStepper.value))"
         RoundDecimal.instance.roundDecimal = Int(decimalStepper.value)

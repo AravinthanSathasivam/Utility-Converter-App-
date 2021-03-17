@@ -56,10 +56,10 @@ class DataViewController: UIViewController , UITextFieldDelegate{
         switch DataScales(rawValue: sender.tag)! {
         
         case .kilobyte:
-            data.kilobyte = doubleTextFieldValue
-            data.megabyte = doubleTextFieldValue / 1024
-            data.gigabyte = doubleTextFieldValue / 1048576
-            data.terabyte = doubleTextFieldValue / 1073741824
+            data.kilobyte = roundDecimal( value:(doubleTextFieldValue))
+            data.megabyte = roundDecimal( value:(doubleTextFieldValue / 1024))
+            data.gigabyte = roundDecimal( value:(doubleTextFieldValue / 1048576))
+            data.terabyte = roundDecimal( value:(doubleTextFieldValue / 1073741824))
             
             
             mbTextField.text = "\(data.megabyte)"
@@ -67,10 +67,10 @@ class DataViewController: UIViewController , UITextFieldDelegate{
             tbTextField.text = "\(data.terabyte)"
             
         case .megabyte:
-            data.kilobyte = doubleTextFieldValue * 1024
-            data.megabyte = doubleTextFieldValue
-            data.gigabyte = doubleTextFieldValue / 1024
-            data.terabyte = doubleTextFieldValue / 1048576
+            data.kilobyte = roundDecimal( value:(doubleTextFieldValue * 1024))
+            data.megabyte = roundDecimal( value:(doubleTextFieldValue))
+            data.gigabyte = roundDecimal( value:(doubleTextFieldValue / 1024))
+            data.terabyte = roundDecimal( value:(doubleTextFieldValue / 1048576))
             
             
             kbTextField.text = "\(data.kilobyte)"
@@ -78,10 +78,10 @@ class DataViewController: UIViewController , UITextFieldDelegate{
             tbTextField.text = "\(data.terabyte)"
         
         case .gigabyte:
-            data.kilobyte = doubleTextFieldValue *  1048576
-            data.megabyte = doubleTextFieldValue * 1024
-            data.gigabyte = doubleTextFieldValue
-            data.terabyte = doubleTextFieldValue / 1024
+            data.kilobyte = roundDecimal( value:(doubleTextFieldValue *  1048576))
+            data.megabyte = roundDecimal( value:(doubleTextFieldValue * 1024))
+            data.gigabyte = roundDecimal( value:(doubleTextFieldValue))
+            data.terabyte = roundDecimal( value:(doubleTextFieldValue / 1024))
             
             
             mbTextField.text = "\(data.megabyte)"
@@ -89,10 +89,10 @@ class DataViewController: UIViewController , UITextFieldDelegate{
             tbTextField.text = "\(data.terabyte)"
             
         case .terabyte:
-            data.kilobyte = doubleTextFieldValue * 1073741824
-            data.megabyte = doubleTextFieldValue * 1048576
-            data.gigabyte = doubleTextFieldValue * 1024
-            data.terabyte = doubleTextFieldValue
+            data.kilobyte = roundDecimal( value:(doubleTextFieldValue * 1073741824))
+            data.megabyte = roundDecimal( value:(doubleTextFieldValue * 1048576))
+            data.gigabyte = roundDecimal( value:(doubleTextFieldValue * 1024))
+            data.terabyte = roundDecimal( value:(doubleTextFieldValue))
             
             
             mbTextField.text = "\(data.megabyte)"
@@ -101,4 +101,11 @@ class DataViewController: UIViewController , UITextFieldDelegate{
             
         }
     }
+    
+    // Rounding Decimal
+    func roundDecimal( value: Double) -> Double{
+        let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
+        return Double(round(deciPower*value)/deciPower)
+    }
+
 }

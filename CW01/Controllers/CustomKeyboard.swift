@@ -2,7 +2,7 @@
 //  CustomKeyboard.swift
 //  CW01
 //
-//  Created by user188409 on 3/7/21.
+//  Created by Aravinthan Sathasivam on 3/7/21.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ class CustomKeyboard: UIView {
 
     var activeTextField = UITextField()
         
+    // Assign custom-keyboard nib
         let nibName = "CustomKeyboard"
         var contentView:UIView?
         
@@ -33,7 +34,7 @@ class CustomKeyboard: UIView {
             return nib.instantiate(withOwner: self, options: nil).first as? UIView
         }
     
-    
+    // keyboard button click handling
     @IBAction func handleBtnClick(_ sender: UIButton) {
         let cursorPosition = getCursorPosition()
         
@@ -66,7 +67,7 @@ class CustomKeyboard: UIView {
             
         }
     }
-    
+    // Finding the position of the cursor
     func getCursorPosition() -> Int {
         
         guard let selectRange = activeTextField.selectedTextRange else {return 0}
@@ -74,7 +75,7 @@ class CustomKeyboard: UIView {
         
     }
     
-    
+    // setting the cursor position
     func setCursorPosition(from:Int, offset: Int = 1) {
         if let newPosition = activeTextField.position(from: activeTextField.beginningOfDocument, offset: from + offset) {
             activeTextField.selectedTextRange = activeTextField.textRange(from: newPosition, to: newPosition)
