@@ -27,7 +27,7 @@ class DistanceViewController: UIViewController , UITextFieldDelegate{
     var distance : Distance = Distance(metre: 0.0, kilometre: 0.0, miles: 0.0, centimetre: 0.0, milimetre: 0.0, yard: 0.0, inch: 0.0)
     
     // Array
-    var historyStringArray: [String] = []
+    var distanceArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,5 +190,45 @@ class DistanceViewController: UIViewController , UITextFieldDelegate{
         let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
         return Double(round(deciPower*value)/deciPower)
         
+    }
+    @IBAction func saveDistance(_ sender: UIButton) {
+        if metreTextField.text == ""{
+            errorAlert()
+        }else{
+            // User Defaults - Store data
+            let defaults = UserDefaults.standard
+            let distanceString = distance.getDistance()
+    
+            distanceArray.append(distanceString)
+            defaults.setValue(distanceArray, forKey: "DistanceHistory")
+            successAlert()
+            clearField()
+        }
+    }
+    
+    // Success Alert
+    func successAlert(){
+        let alert =  UIAlertController(title: "Success", message: "The Conversion saved successully!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // Error Alert
+    func errorAlert(){
+        let alert =  UIAlertController(title: "Error", message: "TextFeilds are empty!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+        
+    }
+    
+    // Clear TextFields
+    func clearField(){
+        metreTextField.text = ""
+        kmTextField.text = ""
+        milesTextField.text = ""
+        cmTextField.text = ""
+        mmTextField.text = ""
+        yardTextField.text = ""
+        inchTextField.text = ""
     }
 }

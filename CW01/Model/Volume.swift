@@ -23,7 +23,7 @@ class Volume {
         self.mililitre = mililitre
     }
     
-    func getDistance() -> String {
+    func getVolume() -> String {
         return "\(self.ukGallon) ukGallon | \(self.ukPint) ukPint | \(self.f_ounce) fl oz |\(self.litre) litre |\(self.mililitre) mililitre "
         
     }

@@ -22,7 +22,7 @@ class Data {
         self.terabyte = terabyte
     }
     
-    func getDistance() -> String {
+    func getData() -> String {
         return "\(self.kilobyte) KB | \(self.megabyte) MB | \(self.gigabyte) GB |\(self.terabyte) TB "
         
     }

@@ -9,21 +9,35 @@ import UIKit
 
 class DataHistoryTVC: UITableViewController {
 
+    var history : [String]  = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.initTempInfo()
+    }
+    
+    func initTempInfo(){
+        loadDefaultData("TemperatureHistory")
+    }
+    
+    func loadDefaultData(_ historyKey: String) {
+        let defaults = UserDefaults.standard
+        history = defaults.object(forKey: historyKey) as? [String] ?? [String]()
     }
 
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return history.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "temperatureCell")!
+        cell.textLabel?.textAlignment = .center
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = history[indexPath.row]
+        return cell
     }
 
 

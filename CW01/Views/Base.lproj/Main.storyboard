@@ -46,14 +46,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGt-db-9s1">
                                                 <rect key="frame" x="18.666666666666657" y="150.00000000000003" width="51" height="30"/>
                                                 <state key="normal" title="Volume"/>
+                                                <connections>
+                                                    <segue destination="3I8-b2-loz" kind="show" id="SV5-Dm-T5M"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaD-ge-jEi">
                                                 <rect key="frame" x="14" y="200.00000000000003" width="60" height="30"/>
                                                 <state key="normal" title="Distance"/>
+                                                <connections>
+                                                    <segue destination="uLE-vb-h8x" kind="show" id="vzJ-iU-w1C"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-DL-cBj">
                                                 <rect key="frame" x="28" y="250" width="32" height="30"/>
                                                 <state key="normal" title="Data"/>
+                                                <connections>
+                                                    <segue destination="7k9-dx-4H1" kind="show" id="l8K-tY-icc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -79,6 +88,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmW-gd-985" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3491.3043478260875" y="251.9021739130435"/>
+        </scene>
+        <!--Distance HistoryTVC-->
+        <scene sceneID="uHW-jZ-rRo">
+            <objects>
+                <tableViewController storyboardIdentifier="DistanceHistoryTVC" id="uLE-vb-h8x" customClass="DistanceHistoryTVC" customModule="CW01" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CLz-eR-RgF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="distanceCell" id="wcU-Ke-jpQ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wcU-Ke-jpQ" id="2Vn-PS-0cs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uLE-vb-h8x" id="os8-OY-J6J"/>
+                            <outlet property="delegate" destination="uLE-vb-h8x" id="PIe-Yz-EL1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Wx3-wu-Axq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJa-Q0-Cju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4507" y="252"/>
+        </scene>
+        <!--Data HistoryTVC-->
+        <scene sceneID="wMf-sE-7Z7">
+            <objects>
+                <tableViewController storyboardIdentifier="DataHistoryTVC" id="7k9-dx-4H1" customClass="DataHistoryTVC" customModule="CW01" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vzA-Lt-1YG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dhj-yI-FBr">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhj-yI-FBr" id="VoD-zY-3g6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7k9-dx-4H1" id="1qU-A5-JJ1"/>
+                            <outlet property="delegate" destination="7k9-dx-4H1" id="15x-nP-W3z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="09V-zg-7TU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gT-fh-qWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5417" y="1057"/>
         </scene>
         <!--Speed HistoryTVC-->
         <scene sceneID="7IH-hY-txs">
@@ -138,16 +205,16 @@
             </objects>
             <point key="canvasLocation" x="2632" y="1058"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Weight HistoryTVC-->
         <scene sceneID="uaZ-ph-2Qd">
             <objects>
-                <tableViewController id="6dv-z6-R7E" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WeightHistoryTVC" id="6dv-z6-R7E" customClass="WeightHistoryTVC" customModule="CW01" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Tr-DE-Yal">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="c1x-NE-4sh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weightCell" id="c1x-NE-4sh">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c1x-NE-4sh" id="FwN-eH-veR">
@@ -166,6 +233,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXf-9r-qKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3954" y="1057"/>
+        </scene>
+        <!--Volume HistoryTVC-->
+        <scene sceneID="jev-hp-YKa">
+            <objects>
+                <tableViewController storyboardIdentifier="VolumeHistoryTVC" id="3I8-b2-loz" customClass="VolumeHistoryTVC" customModule="CW01" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9mu-Qn-llB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Due-iY-TfF">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Due-iY-TfF" id="6cj-ER-azS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3I8-b2-loz" id="sg5-mA-xei"/>
+                            <outlet property="delegate" destination="3I8-b2-loz" id="6AH-56-7Bo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sZm-0F-hEL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCo-sb-9lT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4686" y="1057"/>
         </scene>
         <!--Convertor-->
         <scene sceneID="0e8-bT-30J">
@@ -802,6 +898,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0u-49-LiG">
                                                                 <rect key="frame" x="340" y="0.0" width="34" height="34"/>
                                                                 <state key="normal" title="Save"/>
+                                                                <connections>
+                                                                    <action selector="saveDistance:" destination="pn0-7o-utx" eventType="touchUpInside" id="ruU-d5-9FA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1054,6 +1153,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zc-nj-FDL">
                                                                 <rect key="frame" x="340" y="0.0" width="34" height="34"/>
                                                                 <state key="normal" title="Save"/>
+                                                                <connections>
+                                                                    <action selector="saveVolume:" destination="8HN-nd-7g7" eventType="touchUpInside" id="S7K-W5-TNe"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1438,6 +1540,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVG-yV-8dY">
                                                                 <rect key="frame" x="340" y="0.0" width="34" height="34"/>
                                                                 <state key="normal" title="Save"/>
+                                                                <connections>
+                                                                    <action selector="saveData:" destination="cbr-zT-Lys" eventType="touchUpInside" id="omr-3d-vqx"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

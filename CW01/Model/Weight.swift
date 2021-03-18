@@ -25,7 +25,7 @@ class Weight {
         self.s_pound = s_pound
     }
     
-    func getDistance() -> String {
+    func getWeight() -> String {
         return "\(self.kg) kg | \(self.gram) g | \(self.ounce) ounce |\(self.pound) pound |\(self.stone) stone and \(self.s_pound) pound "
         
     }

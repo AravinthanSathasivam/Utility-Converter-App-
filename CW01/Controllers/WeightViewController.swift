@@ -163,5 +163,42 @@ class WeightViewController: UIViewController , UITextFieldDelegate{
     }
     
     @IBAction func saveWeight(_ sender: UIButton) {
+        if ounceTextField.text == ""{
+            errorAlert()
+        }else{
+            
+            let defaults = UserDefaults.standard
+            let historyString = weight.getWeight()
+            
+            historyStringArray.append(historyString)
+            defaults.setValue(historyStringArray, forKey: "weightHistory")
+            successAlert()
+            clearField()
+        }
+    }
+    
+    // Success Alert
+    func successAlert(){
+        let alert =  UIAlertController(title: "Success", message: "The Conversion saved successully!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // Error Alert
+    func errorAlert(){
+        let alert =  UIAlertController(title: "Error", message: "TextFeilds are empty!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+        
+    }
+    
+    // Clear TextFields
+    func clearField(){
+        ounceTextField.text = ""
+        poundTextField.text = ""
+        gramTextField.text = ""
+        stoneTextField.text = ""
+        sPoundTextField.text = ""
+        kgTextField.text = ""
     }
 }

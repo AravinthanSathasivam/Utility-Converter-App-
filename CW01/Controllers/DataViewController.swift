@@ -108,4 +108,29 @@ class DataViewController: UIViewController , UITextFieldDelegate{
         return Double(round(deciPower*value)/deciPower)
     }
 
+    @IBAction func saveData(_ sender: UIButton) {
+    }
+    
+    // Success Alert
+    func successAlert(){
+        let alert =  UIAlertController(title: "Success", message: "The Conversion saved successully!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // Error Alert
+    func errorAlert(){
+        let alert =  UIAlertController(title: "Error", message: "TextFeilds are empty!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+        
+    }
+    
+    // Clear TextFields
+    func clearField(){
+        kbTextField.text = ""
+        mbTextField.text = ""
+        gbTextField.text = ""
+        tbTextField.text = ""
+    }
 }
