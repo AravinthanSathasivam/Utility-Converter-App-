@@ -11,6 +11,8 @@ enum TemperatureScales: Int {
     case celsius ,fahrenheit, kelvin
 }
 
+private let max_count = 5
+
 class TemperatureViewController: UIViewController , UITextFieldDelegate{
     // Variables
     @IBOutlet weak var keyboardView: CustomKeyboard!
@@ -30,18 +32,18 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
         allocateDelegate()
         historyStringArray.append(contentsOf: loadDefaults("TemperatureHistory"))
     }
-    
+    // Assign Delegates
     func allocateDelegate(){
         celsiusTextField.delegate = self
         fahrenheitTextField.delegate = self
         kelvinTextField.delegate = self
     }
-    
+    // Assign Custom Keyboard to text fields
     func textFieldDidBeginEditing(_ textField: UITextField) {
         keyboardView.activeTextField = textField
         textField.inputView = UIView()
     }
-    
+    // Conversion - Temperature
     @IBAction func handleTextField(_ sender: UITextField) {
         guard let textFieldValue = sender.text else { return }
         guard let doubleTextFieldValue = Double(textFieldValue) else {
@@ -78,37 +80,55 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
             
         }
     }
-    
-    func saveTemperature(){
-        
-        let defaults = UserDefaults.standard
-        let historyString = temperature.getTemperature()
-        
-        historyStringArray.append(historyString)
-        defaults.setValue(historyStringArray, forKey: "TemperatureHistory")
-        
-    }
-    
+ 
     func loadDefaults(_ historyKey: String) -> [String] {
         let defaults = UserDefaults.standard
         
         return defaults.object(forKey: historyKey) as? [String] ?? [String]()
     }
+    
     // Storing values in User Defaults
-    @IBAction func onPressSave(_ sender: UIButton) {
-        
-        let defaults = UserDefaults.standard
-        let historyString = temperature.getTemperature()
-        
-        historyStringArray.append(historyString)
-        defaults.setValue(historyStringArray, forKey: "TemperatureHistory")
+    @IBAction func saveTemperature(_ sender: UIButton) {
+        if celsiusTextField.text == ""{
+            errorAlert()
+        }else{
+            
+            let defaults = UserDefaults.standard
+            let historyString = temperature.getTemperature()
+            
+            historyStringArray.append(historyString)
+            defaults.setValue(historyStringArray, forKey: "TemperatureHistory")            
+            successAlert()
+            clearField()
+        }
     }
     
     // Rounding Decimal
     func roundDecimal( value: Double) -> Double{
         let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
         return Double(round(deciPower*value)/deciPower)
+    }
+    
+    // Success Alert
+    func successAlert(){
+        let alert =  UIAlertController(title: "Success", message: "The Conversion saved successully!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // Error Alert
+    func errorAlert(){
+        let alert =  UIAlertController(title: "Error", message: "TextFeilds are empty!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
         
+    }
+    
+    // Clear TextFields
+    func clearField(){
+        celsiusTextField.text = ""
+        fahrenheitTextField.text = ""
+        kelvinTextField.text = ""
     }
 }
 

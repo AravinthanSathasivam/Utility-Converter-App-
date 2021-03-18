@@ -29,7 +29,7 @@ class Distance {
     }
     
     func getDistance() -> String {
-        return "\(self.metre) metre | \(self.kilometre) kilometre | \(self.miles) miles |\(self.centimetre) centimetre |\(self.milimetre) milimetre |\(self.yard) yard |\(self.inch) inch "
+        return "\(self.metre) m | \(self.kilometre) km | \(self.miles) miles |\(self.centimetre) cm |\(self.milimetre) mm |\(self.yard) yard |\(self.inch) inch "
         
     }
 }

@@ -23,7 +23,7 @@ class Speed {
     }
     
     func getSpeed() -> String {
-        return "\(self.metre_Sec) metre_Sec | \(self.kilometre_Hour) kilometre_Hour | \(self.miles_Hour) miles_Hour |\(self.knot) knot "
+        return "\(self.metre_Sec) m/s | \(self.kilometre_Hour) km/h | \(self.miles_Hour) miles/h |\(self.knot) kn "
         
     }
 }

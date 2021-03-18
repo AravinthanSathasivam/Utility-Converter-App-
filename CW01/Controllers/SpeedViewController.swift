@@ -23,10 +23,14 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     //creating an object - Speed
     var speed : Speed = Speed(metre_Sec: 0.0, kilometre_Hour: 0.0, miles_Hour: 0.0, knot: 0.0)
     
+    // Array to store Temperature-conversions
+    var speedArray: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         allocateDelegate()
+        speedArray.append(contentsOf: loadDefaults("SpeedHistory"))
     }
     //Assign Delegates
     func allocateDelegate(){
@@ -102,5 +106,51 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
         let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
         return Double(round(deciPower*value)/deciPower)
         
+    }
+    
+    //User Default 
+    func loadDefaults(_ speedHistoryKey: String) -> [String] {
+        let defaults = UserDefaults.standard
+        
+        return defaults.object(forKey: speedHistoryKey) as? [String] ?? [String]()
+    }
+    
+    // Save Speed Conversion
+    @IBAction func saveSpeed(_ sender: UIButton) {
+        if metre_SecTextField.text == ""{
+            errorAlert()
+        }else{
+            // User Defaults - Store data
+            let defaults = UserDefaults.standard
+            let speedString = speed.getSpeed()
+    
+            speedArray.append(speedString)
+            defaults.setValue(speedArray, forKey: "SpeedHistory")
+            successAlert()
+            clearField()
+        }
+    }
+    
+    // Success Alert
+    func successAlert(){
+        let alert =  UIAlertController(title: "Success", message: "The Conversion saved successully!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    // Error Alert
+    func errorAlert(){
+        let alert =  UIAlertController(title: "Error", message: "TextFeilds are empty!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+        
+    }
+    
+    // Clear TextFields
+    func clearField(){
+        metre_SecTextField.text = ""
+        km_HourTextField.text = ""
+        miles_HourTextField.text = ""
+        knotTextField.text = ""
     }
 }

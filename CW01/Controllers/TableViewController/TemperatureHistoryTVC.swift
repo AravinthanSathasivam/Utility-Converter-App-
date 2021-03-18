@@ -7,32 +7,22 @@
 
 import UIKit
 
-class HistoryTableViewController: UITableViewController {
-    
+class TemperatureHistoryTVC: UITableViewController {
     var history : [String]  = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.initHistoryInfor()
+        self.initTempInfo()
     }
     
-    func initHistoryInfor(){
+    func initTempInfo(){
         loadDefaultData("TemperatureHistory")
-        
-        history.forEach { (data) in
-            print(data)
-            
-        }
     }
     
     func loadDefaultData(_ historyKey: String) {
         let defaults = UserDefaults.standard
-        
         history = defaults.object(forKey: historyKey) as? [String] ?? [String]()
     }
-
-    // MARK: - Table view data source
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +30,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseHistoryCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "temperatureCell")!
         cell.textLabel?.textAlignment = .center
         
         cell.textLabel?.numberOfLines = 0

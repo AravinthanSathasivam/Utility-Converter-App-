@@ -16,11 +16,16 @@
 		2B01C46925F60866002C4783 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01C46725F60866002C4783 /* CustomKeyboard.swift */; };
 		2B01C46A25F60866002C4783 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B01C46825F60866002C4783 /* CustomKeyboard.xib */; };
 		2B01C46E25F6224B002C4783 /* ConvertionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */; };
-		2B67708A2601D71900BD433B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6770892601D71900BD433B /* HistoryTableViewController.swift */; };
+		2B67708A2601D71900BD433B /* TemperatureHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6770892601D71900BD433B /* TemperatureHistoryTVC.swift */; };
 		2B67708D2601F62A00BD433B /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B67708C2601F62A00BD433B /* DistanceViewController.swift */; };
 		2B677090260207FE00BD433B /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B67708F260207FE00BD433B /* VolumeViewController.swift */; };
 		2B6770932602080F00BD433B /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6770922602080F00BD433B /* WeightViewController.swift */; };
 		2B6770962602082B00BD433B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6770952602082B00BD433B /* DataViewController.swift */; };
+		2B68054B2602D20C00983DE0 /* SpeedHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B68054A2602D20C00983DE0 /* SpeedHistoryTVC.swift */; };
+		2B68054F2602DE8600983DE0 /* WeightHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B68054E2602DE8600983DE0 /* WeightHistoryTVC.swift */; };
+		2B6805522602DEB800983DE0 /* VolumeHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6805512602DEB800983DE0 /* VolumeHistoryTVC.swift */; };
+		2B6805552602DEDB00983DE0 /* DistanceHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6805542602DEDB00983DE0 /* DistanceHistoryTVC.swift */; };
+		2B6805582602DEF800983DE0 /* DataHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6805572602DEF800983DE0 /* DataHistoryTVC.swift */; };
 		2B804591260101AD006D2B19 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B804590260101AD006D2B19 /* SpeedViewController.swift */; };
 		2BD5E57625FFD870001C934C /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57525FFD870001C934C /* TemperatureViewController.swift */; };
 		2BD5E57925FFF01C001C934C /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5E57825FFF01C001C934C /* Temperature.swift */; };
@@ -45,11 +50,16 @@
 		2B01C46725F60866002C4783 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		2B01C46825F60866002C4783 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 		2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertionViewController.swift; sourceTree = "<group>"; };
-		2B6770892601D71900BD433B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		2B6770892601D71900BD433B /* TemperatureHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureHistoryTVC.swift; sourceTree = "<group>"; };
 		2B67708C2601F62A00BD433B /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		2B67708F260207FE00BD433B /* VolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		2B6770922602080F00BD433B /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		2B6770952602082B00BD433B /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		2B68054A2602D20C00983DE0 /* SpeedHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedHistoryTVC.swift; sourceTree = "<group>"; };
+		2B68054E2602DE8600983DE0 /* WeightHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryTVC.swift; sourceTree = "<group>"; };
+		2B6805512602DEB800983DE0 /* VolumeHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeHistoryTVC.swift; sourceTree = "<group>"; };
+		2B6805542602DEDB00983DE0 /* DistanceHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceHistoryTVC.swift; sourceTree = "<group>"; };
+		2B6805572602DEF800983DE0 /* DataHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHistoryTVC.swift; sourceTree = "<group>"; };
 		2B804590260101AD006D2B19 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		2BD5E57525FFD870001C934C /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		2BD5E57825FFF01C001C934C /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
@@ -120,12 +130,12 @@
 		2B01C46325F60711002C4783 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B68054D2602DE0300983DE0 /* TableViewController */,
 				2B01C46725F60866002C4783 /* CustomKeyboard.swift */,
 				2B01C45025F606D3002C4783 /* ViewController.swift */,
 				2B01C46D25F6224B002C4783 /* ConvertionViewController.swift */,
 				2BD5E57525FFD870001C934C /* TemperatureViewController.swift */,
 				2B804590260101AD006D2B19 /* SpeedViewController.swift */,
-				2B6770892601D71900BD433B /* HistoryTableViewController.swift */,
 				2B67708C2601F62A00BD433B /* DistanceViewController.swift */,
 				2B67708F260207FE00BD433B /* VolumeViewController.swift */,
 				2B6770952602082B00BD433B /* DataViewController.swift */,
@@ -143,6 +153,19 @@
 				2B01C45225F606D3002C4783 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2B68054D2602DE0300983DE0 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B68054A2602D20C00983DE0 /* SpeedHistoryTVC.swift */,
+				2B6770892601D71900BD433B /* TemperatureHistoryTVC.swift */,
+				2B68054E2602DE8600983DE0 /* WeightHistoryTVC.swift */,
+				2B6805512602DEB800983DE0 /* VolumeHistoryTVC.swift */,
+				2B6805542602DEDB00983DE0 /* DistanceHistoryTVC.swift */,
+				2B6805572602DEF800983DE0 /* DataHistoryTVC.swift */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 		2BFAC5AE26028358008806E3 /* Extensions */ = {
@@ -229,15 +252,20 @@
 				2B01C44F25F606D3002C4783 /* SceneDelegate.swift in Sources */,
 				2BD5E5852600056D001C934C /* Speed.swift in Sources */,
 				2B6770932602080F00BD433B /* WeightViewController.swift in Sources */,
-				2B67708A2601D71900BD433B /* HistoryTableViewController.swift in Sources */,
+				2B6805552602DEDB00983DE0 /* DistanceHistoryTVC.swift in Sources */,
+				2B67708A2601D71900BD433B /* TemperatureHistoryTVC.swift in Sources */,
 				2BD5E57F26000544001C934C /* Volume.swift in Sources */,
 				2BFAC5B02602838D008806E3 /* RoundDecimal.swift in Sources */,
 				2B804591260101AD006D2B19 /* SpeedViewController.swift in Sources */,
 				2BD5E5822600055A001C934C /* Distance.swift in Sources */,
+				2B6805582602DEF800983DE0 /* DataHistoryTVC.swift in Sources */,
+				2B68054F2602DE8600983DE0 /* WeightHistoryTVC.swift in Sources */,
 				2B67708D2601F62A00BD433B /* DistanceViewController.swift in Sources */,
 				2B6770962602082B00BD433B /* DataViewController.swift in Sources */,
 				2B01C46925F60866002C4783 /* CustomKeyboard.swift in Sources */,
+				2B6805522602DEB800983DE0 /* VolumeHistoryTVC.swift in Sources */,
 				2BD5E5882600057E001C934C /* Data.swift in Sources */,
+				2B68054B2602D20C00983DE0 /* SpeedHistoryTVC.swift in Sources */,
 				2B01C46E25F6224B002C4783 /* ConvertionViewController.swift in Sources */,
 				2BFAC5B326028560008806E3 /* SettingViewController.swift in Sources */,
 				2B677090260207FE00BD433B /* VolumeViewController.swift in Sources */,

@@ -23,7 +23,7 @@ class Data {
     }
     
     func getDistance() -> String {
-        return "\(self.kilobyte) kilobyte | \(self.megabyte) megabyte | \(self.gigabyte) gigabyte |\(self.terabyte) terabyte "
+        return "\(self.kilobyte) KB | \(self.megabyte) MB | \(self.gigabyte) GB |\(self.terabyte) TB "
         
     }
     

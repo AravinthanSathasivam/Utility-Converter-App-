@@ -155,4 +155,13 @@ class WeightViewController: UIViewController , UITextFieldDelegate{
         return Double(round(deciPower*value)/deciPower)
     }
     
+    //User Default
+    func loadDefaults(_ weightHistoryKey: String) -> [String] {
+        let defaults = UserDefaults.standard
+        
+        return defaults.object(forKey: weightHistoryKey) as? [String] ?? [String]()
+    }
+    
+    @IBAction func saveWeight(_ sender: UIButton) {
+    }
 }

@@ -19,8 +19,6 @@ class ConvertionViewController: UIViewController {
     // Custom-Keyboard
     @IBOutlet weak var keyboardView: CustomKeyboard!
     
-    var viewIdentifier : Int = 0
-    
     // Segues- identifiers
     enum Segues {
         static let  toTemperature = "ToTemperature"
@@ -34,12 +32,7 @@ class ConvertionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func saveConversions(_ sender: UIBarButtonItem) {
-        //TemperatureViewController().saveTemperature()
-        print(viewIdentifier)
         
-        }
     // Passing data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Passing data to temperature View Controller
@@ -87,8 +80,7 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 0
             speedView.alpha = 0
             dataView.alpha = 0
-            
-            viewIdentifier = 0
+
         }else if sender.selectedSegmentIndex == 1{
             weightView.alpha = 0
             temperatureView.alpha = 1
@@ -96,8 +88,7 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 0
             speedView.alpha = 0
             dataView.alpha = 0
-            
-            viewIdentifier = 1
+
         }else if sender.selectedSegmentIndex == 2{
             weightView.alpha = 0
             temperatureView.alpha = 0
@@ -106,8 +97,6 @@ class ConvertionViewController: UIViewController {
             speedView.alpha = 0
             dataView.alpha = 0
             
-            viewIdentifier = 2
-            
         }else if sender.selectedSegmentIndex == 3{
             weightView.alpha = 0
             temperatureView.alpha = 0
@@ -115,8 +104,6 @@ class ConvertionViewController: UIViewController {
             distanceView.alpha = 1
             speedView.alpha = 0
             dataView.alpha = 0
-            
-            viewIdentifier = 3
             
         }else if sender.selectedSegmentIndex == 4{
             
@@ -127,8 +114,6 @@ class ConvertionViewController: UIViewController {
             speedView.alpha = 1
             dataView.alpha = 0
             
-            viewIdentifier = 4
-            
         }else if sender.selectedSegmentIndex == 5{
             
             weightView.alpha = 0
@@ -138,7 +123,6 @@ class ConvertionViewController: UIViewController {
             speedView.alpha = 0
             dataView.alpha = 1
             
-            viewIdentifier = 5
             
         }
         
