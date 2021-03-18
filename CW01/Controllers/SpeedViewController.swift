@@ -11,6 +11,8 @@ enum SpeedScales: Int {
     case metre_Sec ,kilometre_Hour, miles_Hour ,knot
 }
 
+private let max_count = 5
+
 class SpeedViewController: UIViewController, UITextFieldDelegate {
     // Custom-Keyboard - varaibles
     @IBOutlet weak var keyboardView: CustomKeyboard!
@@ -123,6 +125,10 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             // User Defaults - Store data
             let defaults = UserDefaults.standard
             let speedString = speed.getSpeed()
+            // Limiting the count to 5
+            if speedArray.count >= max_count{
+                speedArray = Array(speedArray.suffix(max_count-1))
+            }
     
             speedArray.append(speedString)
             defaults.setValue(speedArray, forKey: "SpeedHistory")

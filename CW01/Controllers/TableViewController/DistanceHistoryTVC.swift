@@ -17,7 +17,7 @@ class DistanceHistoryTVC: UITableViewController {
     }
     
     func initTempInfo(){
-        loadDefaultData("TemperatureHistory")
+        loadDefaultData("DistanceHistory")
     }
     
     func loadDefaultData(_ historyKey: String) {
@@ -32,7 +32,7 @@ class DistanceHistoryTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "temperatureCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "distanceCell")!
         cell.textLabel?.textAlignment = .center
         
         cell.textLabel?.numberOfLines = 0

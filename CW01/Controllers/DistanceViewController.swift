@@ -11,6 +11,8 @@ enum DistanceScales: Int {
     case metre ,kilometre, miles, centimetre, milimetre, yard, inch
 }
 
+private let max_count = 5
+
 class DistanceViewController: UIViewController , UITextFieldDelegate{
     // Custom-Keyboard - varaibles
     @IBOutlet weak var keyboardView: CustomKeyboard!
@@ -33,6 +35,7 @@ class DistanceViewController: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
 
         allocateDelegate()
+        distanceArray.append(contentsOf: loadDefaults("DistanceHistory"))
     }
     // Assign delegates
     func allocateDelegate(){
@@ -191,6 +194,14 @@ class DistanceViewController: UIViewController , UITextFieldDelegate{
         return Double(round(deciPower*value)/deciPower)
         
     }
+    
+    //User Default
+    func loadDefaults(_ speedHistoryKey: String) -> [String] {
+        let defaults = UserDefaults.standard
+        
+        return defaults.object(forKey: speedHistoryKey) as? [String] ?? [String]()
+    }
+    
     @IBAction func saveDistance(_ sender: UIButton) {
         if metreTextField.text == ""{
             errorAlert()
@@ -198,6 +209,10 @@ class DistanceViewController: UIViewController , UITextFieldDelegate{
             // User Defaults - Store data
             let defaults = UserDefaults.standard
             let distanceString = distance.getDistance()
+            // Limiting the count to 5
+            if distanceArray.count >= max_count{
+                distanceArray = Array(distanceArray.suffix(max_count-1))
+            }
     
             distanceArray.append(distanceString)
             defaults.setValue(distanceArray, forKey: "DistanceHistory")

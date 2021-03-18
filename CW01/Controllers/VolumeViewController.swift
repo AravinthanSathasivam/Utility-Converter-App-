@@ -11,6 +11,8 @@ enum VolumeScales: Int {
     case ukGallon ,ukPint, f_ounce, litre, mililitre
 }
 
+private let max_count = 5
+
 class VolumeViewController: UIViewController , UITextFieldDelegate{
     
     //create variables
@@ -25,11 +27,12 @@ class VolumeViewController: UIViewController , UITextFieldDelegate{
     //creating an object - Volume
     var volume : Volume = Volume(ukGallon: 0.0, ukPint: 0.0, f_ounce: 0.0, litre: 0.0, stone: 0.0, mililitre: 0.0)
     
-    var historyStringArray: [String] = []
+    var volumeArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         allocateDelegate()
+        volumeArray.append(contentsOf: loadDefaults("VolumeHistory"))
     }
     // Assign Delegate
     func allocateDelegate(){
@@ -128,8 +131,30 @@ class VolumeViewController: UIViewController , UITextFieldDelegate{
         return Double(round(deciPower*value)/deciPower)
         
     }
+    //User Default
+    func loadDefaults(_ speedHistoryKey: String) -> [String] {
+        let defaults = UserDefaults.standard
+        
+        return defaults.object(forKey: speedHistoryKey) as? [String] ?? [String]()
+    }
     
     @IBAction func saveVolume(_ sender: UIButton) {
+        if ukGallonTF.text == ""{
+            errorAlert()
+        }else{
+            
+            let defaults = UserDefaults.standard
+            let historyString = volume.getVolume()
+            // Limiting the count to 5
+            if volumeArray.count >= max_count{
+                volumeArray = Array(volumeArray.suffix(max_count-1))
+            }
+            
+            volumeArray.append(historyString)
+            defaults.setValue(volumeArray, forKey: "VolumeHistory")
+            successAlert()
+            clearField()
+        }
     }
     
     // Success Alert

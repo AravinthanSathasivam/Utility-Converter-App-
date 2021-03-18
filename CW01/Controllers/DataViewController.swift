@@ -10,6 +10,7 @@ import UIKit
 enum DataScales: Int {
     case kilobyte ,megabyte, gigabyte, terabyte
 }
+private let max_count = 5
 
 class DataViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var keyboardView: CustomKeyboard!
@@ -107,8 +108,31 @@ class DataViewController: UIViewController , UITextFieldDelegate{
         let deciPower = Double(round((pow(10,Double(RoundDecimal.instance.roundDecimal)))))
         return Double(round(deciPower*value)/deciPower)
     }
+    
+    //User Default
+    func loadDefaults(_ speedHistoryKey: String) -> [String] {
+        let defaults = UserDefaults.standard
+        
+        return defaults.object(forKey: speedHistoryKey) as? [String] ?? [String]()
+    }
 
     @IBAction func saveData(_ sender: UIButton) {
+        if kbTextField.text == ""{
+            errorAlert()
+        }else{
+            
+            let defaults = UserDefaults.standard
+            let historyString = data.getData()
+            // Limiting the count to 5
+            if historyStringArray.count >= max_count{
+                historyStringArray = Array(historyStringArray.suffix(max_count-1))
+            }
+            
+            historyStringArray.append(historyString)
+            defaults.setValue(historyStringArray, forKey: "DataHistory")
+            successAlert()
+            clearField()
+        }
     }
     
     // Success Alert

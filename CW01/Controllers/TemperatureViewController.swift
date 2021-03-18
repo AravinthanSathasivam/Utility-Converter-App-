@@ -95,7 +95,11 @@ class TemperatureViewController: UIViewController , UITextFieldDelegate{
             
             let defaults = UserDefaults.standard
             let historyString = temperature.getTemperature()
-            
+            // Limiting the count to 5
+            if historyStringArray.count >= max_count{
+                historyStringArray = Array(historyStringArray.suffix(max_count-1))
+            }
+            // Storing data to array
             historyStringArray.append(historyString)
             defaults.setValue(historyStringArray, forKey: "TemperatureHistory")            
             successAlert()

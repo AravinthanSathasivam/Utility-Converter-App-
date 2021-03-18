@@ -17,7 +17,7 @@ class DataHistoryTVC: UITableViewController {
     }
     
     func initTempInfo(){
-        loadDefaultData("TemperatureHistory")
+        loadDefaultData("DataHistory")
     }
     
     func loadDefaultData(_ historyKey: String) {
@@ -32,7 +32,7 @@ class DataHistoryTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "temperatureCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell")!
         cell.textLabel?.textAlignment = .center
         
         cell.textLabel?.numberOfLines = 0

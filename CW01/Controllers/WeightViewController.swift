@@ -11,6 +11,8 @@ enum WeightScales: Int {
     case kg ,gram, ounce, pound, stone, s_pound
 }
 
+private let max_count = 5
+
 class WeightViewController: UIViewController , UITextFieldDelegate{
     // variable - Custom-Keyboard
     @IBOutlet weak var keyboardView: CustomKeyboard!
@@ -169,7 +171,10 @@ class WeightViewController: UIViewController , UITextFieldDelegate{
             
             let defaults = UserDefaults.standard
             let historyString = weight.getWeight()
-            
+            // Limiting the count to 5
+            if historyStringArray.count >= max_count{
+                historyStringArray = Array(historyStringArray.suffix(max_count-1))
+            }
             historyStringArray.append(historyString)
             defaults.setValue(historyStringArray, forKey: "weightHistory")
             successAlert()
